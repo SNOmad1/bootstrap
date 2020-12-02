@@ -71,7 +71,7 @@ const getConfigByPluginKey = pluginKey => {
     case 'Collapse':
     case 'Modal':
     case 'ScrollSpy': {
-      const config = Object.assign(defaultPluginConfig)
+      const config = { ...defaultPluginConfig }
       config.external.push(bsPlugins.Manipulator)
       config.globals[bsPlugins.Manipulator] = 'Manipulator'
       return config
@@ -79,7 +79,7 @@ const getConfigByPluginKey = pluginKey => {
 
     case 'Dropdown':
     case 'Tooltip': {
-      const config = Object.assign(defaultPluginConfig)
+      const config = { ...defaultPluginConfig }
       config.external.push(bsPlugins.Manipulator, '@popperjs/core')
       config.globals[bsPlugins.Manipulator] = 'Manipulator'
       config.globals['@popperjs/core'] = 'Popper'
