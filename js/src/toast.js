@@ -182,8 +182,7 @@ class Toast extends BaseComponent {
       return
     }
 
-    const nextElement = event.relatedTarget
-    if (this._element === nextElement || this._element.contains(nextElement)) {
+    if (this._element === event.relatedTarget || this._element.contains(event.relatedTarget)) {
       return
     }
 

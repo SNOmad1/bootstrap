@@ -199,10 +199,8 @@ const reflow = element => {
 }
 
 const getjQuery = () => {
-  const { jQuery } = window
-
-  if (jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
-    return jQuery
+  if (window.jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
+    return window.jQuery
   }
 
   return null
