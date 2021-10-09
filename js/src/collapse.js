@@ -160,7 +160,7 @@ class Collapse extends BaseComponent {
     const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1)
     const scrollSize = `scroll${capitalizedDimension}`
 
-    this._queueCallback(complete, this._element, true)
+    this.queueCallback(complete, this._element, true)
     this._element.style[dimension] = `${this._element[scrollSize]}px`
   }
 
@@ -202,7 +202,7 @@ class Collapse extends BaseComponent {
 
     this._element.style[dimension] = ''
 
-    this._queueCallback(complete, this._element, true)
+    this.queueCallback(complete, this._element, true)
   }
 
   _isShown(element = this._element) {

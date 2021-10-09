@@ -110,7 +110,7 @@ class Tab extends BaseComponent {
 
     if (active && isTransitioning) {
       active.classList.remove(CLASS_NAME_SHOW)
-      this._queueCallback(complete, element, true)
+      this.queueCallback(complete, element, true)
     } else {
       complete()
     }

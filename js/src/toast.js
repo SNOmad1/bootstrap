@@ -103,7 +103,7 @@ class Toast extends BaseComponent {
     this._element.classList.add(CLASS_NAME_SHOW)
     this._element.classList.add(CLASS_NAME_SHOWING)
 
-    this._queueCallback(complete, this._element, this._config.animation)
+    this.queueCallback(complete, this._element, this._config.animation)
   }
 
   hide() {
@@ -125,7 +125,7 @@ class Toast extends BaseComponent {
     }
 
     this._element.classList.add(CLASS_NAME_SHOWING)
-    this._queueCallback(complete, this._element, this._config.animation)
+    this.queueCallback(complete, this._element, this._config.animation)
   }
 
   dispose() {

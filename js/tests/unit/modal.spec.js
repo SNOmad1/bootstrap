@@ -571,7 +571,7 @@ describe('Modal', () => {
       })
 
       modalEl.addEventListener('shown.bs.modal', () => {
-        const spy = spyOn(modal, '_queueCallback').and.callThrough()
+        const spy = spyOn(modal, 'queueCallback').and.callThrough()
 
         modalEl.click()
         modalEl.click()

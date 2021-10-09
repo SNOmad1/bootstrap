@@ -165,7 +165,7 @@ class Modal extends BaseComponent {
     EventHandler.off(this._element, EVENT_CLICK_DISMISS)
     EventHandler.off(this._dialog, EVENT_MOUSEDOWN_DISMISS)
 
-    this._queueCallback(() => this._hideModal(), this._element, isAnimated)
+    this.queueCallback(() => this._hideModal(), this._element, isAnimated)
   }
 
   dispose() {
@@ -242,7 +242,7 @@ class Modal extends BaseComponent {
       })
     }
 
-    this._queueCallback(transitionComplete, this._dialog, isAnimated)
+    this.queueCallback(transitionComplete, this._dialog, isAnimated)
   }
 
   _setEscapeEvent() {
@@ -326,10 +326,10 @@ class Modal extends BaseComponent {
     }
 
     classList.add(CLASS_NAME_STATIC)
-    this._queueCallback(() => {
+    this.queueCallback(() => {
       classList.remove(CLASS_NAME_STATIC)
       if (!isModalOverflowing) {
-        this._queueCallback(() => {
+        this.queueCallback(() => {
           style.overflowY = ''
         }, this._dialog)
       }
