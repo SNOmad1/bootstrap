@@ -291,14 +291,14 @@ const executeAfterTransition = (callback, transitionElement, waitForTransition =
  * @return {Element|elem} The proper element
  */
 const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed) => {
+  const listLength = list.length
   let index = list.indexOf(activeElement)
 
-  // if the element does not exist in the list return an element depending on the direction and if cycle is allowed
+  // if the element does not exist in the list return an element
+  // depending on the direction and if cycle is allowed
   if (index === -1) {
-    return list[!shouldGetNext && isCycleAllowed ? list.length - 1 : 0]
+    return !shouldGetNext && isCycleAllowed ? list[listLength - 1] : list[0]
   }
-
-  const listLength = list.length
 
   index += shouldGetNext ? 1 : -1
 
