@@ -335,9 +335,9 @@ class Tooltip extends BaseComponent {
       }
     }
 
-    this._activeTrigger[TRIGGER_CLICK] = false
-    this._activeTrigger[TRIGGER_FOCUS] = false
-    this._activeTrigger[TRIGGER_HOVER] = false
+    for (const trigger of [TRIGGER_CLICK, TRIGGER_FOCUS, TRIGGER_HOVER]) {
+      this._activeTrigger[trigger] = false
+    }
 
     const isAnimated = this.tip.classList.contains(CLASS_NAME_FADE)
     this.queueCallback(complete, this.tip, isAnimated)
