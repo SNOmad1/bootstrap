@@ -439,7 +439,9 @@ class Tooltip extends BaseComponent {
 
   // Private
   _initializeOnDelegatedTarget(event, context) {
-    return context || this.constructor.getOrCreateInstance(event.delegateTarget, this._getDelegateConfig())
+    return event && event.delegateTarget ?
+      this.constructor.getOrCreateInstance(event.delegateTarget, this._getDelegateConfig()) :
+      context
   }
 
   _getOffset() {
