@@ -160,7 +160,7 @@ class Carousel extends BaseComponent {
       this._interval = null
     }
 
-    if (this._config && this._config.interval && !this._isPaused) {
+    if (this._config?.interval && !this._isPaused) {
       this._updateInterval()
 
       this._interval = setInterval(
