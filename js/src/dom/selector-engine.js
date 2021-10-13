@@ -30,7 +30,7 @@ const SelectorEngine = {
     const parents = []
     let ancestor = element.parentNode
 
-    while (ancestor && ancestor.nodeType === Node.ELEMENT_NODE && ancestor.nodeType !== NODE_TEXT) {
+    while (ancestor?.nodeType === Node.ELEMENT_NODE && ancestor?.nodeType !== NODE_TEXT) {
       if (ancestor.matches(selector)) {
         parents.push(ancestor)
       }

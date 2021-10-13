@@ -363,7 +363,7 @@ class Dropdown extends BaseComponent {
   }
 
   static clearMenus(event) {
-    if (event && (event.button === RIGHT_MOUSE_BUTTON || (event.type === 'keyup' && event.key !== TAB_KEY))) {
+    if (event?.button === RIGHT_MOUSE_BUTTON || (event?.type === 'keyup' && event?.key !== TAB_KEY)) {
       return
     }
 

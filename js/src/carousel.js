@@ -279,7 +279,7 @@ class Carousel extends BaseComponent {
   }
 
   _getItemIndex(element) {
-    this._items = element && element.parentNode ?
+    this._items = element?.parentNode ?
       SelectorEngine.find(SELECTOR_ITEM, element.parentNode) :
       []
 
@@ -355,7 +355,7 @@ class Carousel extends BaseComponent {
     const orderClassName = isNext ? CLASS_NAME_NEXT : CLASS_NAME_PREV
     const eventDirectionName = this._orderToDirection(order)
 
-    if (nextElement && nextElement.classList.contains(CLASS_NAME_ACTIVE)) {
+    if (nextElement?.classList.contains(CLASS_NAME_ACTIVE)) {
       this._isSliding = false
       return
     }

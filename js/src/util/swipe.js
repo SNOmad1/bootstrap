@@ -82,7 +82,7 @@ class Swipe {
   }
 
   _move(event) {
-    this._deltaX = event.touches && event.touches.length > 1 ?
+    this._deltaX = event.touches?.length > 1 ?
       0 :
       event.touches[0].clientX - this._deltaX
   }

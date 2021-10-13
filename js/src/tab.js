@@ -104,7 +104,7 @@ class Tab extends BaseComponent {
       SelectorEngine.children(container, SELECTOR_ACTIVE)
 
     const active = activeElements[0]
-    const isTransitioning = callback && (active && active.classList.contains(CLASS_NAME_FADE))
+    const isTransitioning = callback && (active?.classList.contains(CLASS_NAME_FADE))
 
     const complete = () => this._transitionComplete(element, active, callback)
 
@@ -143,11 +143,11 @@ class Tab extends BaseComponent {
     }
 
     let parent = element.parentNode
-    if (parent && parent.nodeName === 'LI') {
+    if (parent?.nodeName === 'LI') {
       parent = parent.parentNode
     }
 
-    if (parent && parent.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
+    if (parent?.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
       const dropdownElement = element.closest(SELECTOR_DROPDOWN)
 
       if (dropdownElement) {
