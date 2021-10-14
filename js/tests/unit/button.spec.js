@@ -155,7 +155,7 @@ describe('Button', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Button.getInstance(div)).toEqual(null)
+      expect(Button.getInstance(div)).toBeNull()
     })
   })
 
@@ -176,7 +176,7 @@ describe('Button', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Button.getInstance(div)).toEqual(null)
+      expect(Button.getInstance(div)).toBeNull()
       expect(Button.getOrCreateInstance(div)).toBeInstanceOf(Button)
     })
   })

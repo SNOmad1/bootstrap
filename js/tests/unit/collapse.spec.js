@@ -489,7 +489,7 @@ describe('Collapse', () => {
 
       collapse.dispose()
 
-      expect(Collapse.getInstance(collapseEl)).toEqual(null)
+      expect(Collapse.getInstance(collapseEl)).toBeNull()
     })
   })
 
@@ -961,7 +961,7 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toEqual(null)
+      expect(Collapse.getInstance(div)).toBeNull()
     })
   })
 
@@ -982,7 +982,7 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toEqual(null)
+      expect(Collapse.getInstance(div)).toBeNull()
       expect(Collapse.getOrCreateInstance(div)).toBeInstanceOf(Collapse)
     })
 
@@ -991,7 +991,7 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toEqual(null)
+      expect(Collapse.getInstance(div)).toBeNull()
       const collapse = Collapse.getOrCreateInstance(div, {
         toggle: false
       })

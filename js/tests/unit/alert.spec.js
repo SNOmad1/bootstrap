@@ -197,7 +197,7 @@ describe('Alert', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Alert.getInstance(div)).toEqual(null)
+      expect(Alert.getInstance(div)).toBeNull()
     })
   })
 
@@ -218,7 +218,7 @@ describe('Alert', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Alert.getInstance(div)).toEqual(null)
+      expect(Alert.getInstance(div)).toBeNull()
       expect(Alert.getOrCreateInstance(div)).toBeInstanceOf(Alert)
     })
   })

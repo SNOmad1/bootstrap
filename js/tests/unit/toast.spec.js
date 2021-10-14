@@ -582,7 +582,7 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toEqual(null)
+      expect(Toast.getInstance(div)).toBeNull()
     })
   })
 
@@ -603,7 +603,7 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toEqual(null)
+      expect(Toast.getInstance(div)).toBeNull()
       expect(Toast.getOrCreateInstance(div)).toBeInstanceOf(Toast)
     })
 
@@ -612,7 +612,7 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toEqual(null)
+      expect(Toast.getInstance(div)).toBeNull()
       const toast = Toast.getOrCreateInstance(div, {
         delay: 1
       })

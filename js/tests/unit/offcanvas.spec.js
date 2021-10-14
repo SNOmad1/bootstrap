@@ -458,7 +458,7 @@ describe('Offcanvas', () => {
       expect(offCanvas._backdrop).toBeNull()
       expect(focustrap.deactivate).toHaveBeenCalled()
       expect(offCanvas._focustrap).toBeNull()
-      expect(Offcanvas.getInstance(offCanvasEl)).toEqual(null)
+      expect(Offcanvas.getInstance(offCanvasEl)).toBeNull()
     })
   })
 
@@ -706,7 +706,7 @@ describe('Offcanvas', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Offcanvas.getInstance(div)).toEqual(null)
+      expect(Offcanvas.getInstance(div)).toBeNull()
       expect(Offcanvas.getOrCreateInstance(div)).toBeInstanceOf(Offcanvas)
     })
 
@@ -715,7 +715,7 @@ describe('Offcanvas', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Offcanvas.getInstance(div)).toEqual(null)
+      expect(Offcanvas.getInstance(div)).toBeNull()
       const offcanvas = Offcanvas.getOrCreateInstance(div, {
         scroll: true
       })

@@ -417,7 +417,7 @@ describe('Tab', () => {
 
   describe('getInstance', () => {
     it('should return null if there is no instance', () => {
-      expect(Tab.getInstance(fixtureEl)).toEqual(null)
+      expect(Tab.getInstance(fixtureEl)).toBeNull()
     })
 
     it('should return this instance', () => {
@@ -448,7 +448,7 @@ describe('Tab', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Tab.getInstance(div)).toEqual(null)
+      expect(Tab.getInstance(div)).toBeNull()
       expect(Tab.getOrCreateInstance(div)).toBeInstanceOf(Tab)
     })
   })

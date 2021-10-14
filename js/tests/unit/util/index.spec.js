@@ -493,7 +493,7 @@ describe('Util', () => {
 
       spyOn(document.documentElement, 'attachShadow').and.returnValue(null)
 
-      expect(Util.findShadowRoot(div)).toEqual(null)
+      expect(Util.findShadowRoot(div)).toBeNull()
     })
 
     it('should return null when we do not find a shadow root', () => {
@@ -505,7 +505,7 @@ describe('Util', () => {
 
       spyOn(document, 'getRootNode').and.returnValue(undefined)
 
-      expect(Util.findShadowRoot(document)).toEqual(null)
+      expect(Util.findShadowRoot(document)).toBeNull()
     })
 
     it('should return the shadow root when found', () => {
@@ -569,14 +569,14 @@ describe('Util', () => {
       document.body.setAttribute('data-bs-no-jquery', '')
 
       expect(window.jQuery).toEqual(fakejQuery)
-      expect(Util.getjQuery()).toEqual(null)
+      expect(Util.getjQuery()).toBeNull()
 
       document.body.removeAttribute('data-bs-no-jquery')
     })
 
     it('should not return jQuery if not present', () => {
       window.jQuery = undefined
-      expect(Util.getjQuery()).toEqual(null)
+      expect(Util.getjQuery()).toBeNull()
     })
   })
 

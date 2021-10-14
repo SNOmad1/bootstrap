@@ -1129,7 +1129,7 @@ describe('Modal', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Modal.getInstance(div)).toEqual(null)
+      expect(Modal.getInstance(div)).toBeNull()
       expect(Modal.getOrCreateInstance(div)).toBeInstanceOf(Modal)
     })
 
@@ -1138,7 +1138,7 @@ describe('Modal', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Modal.getInstance(div)).toEqual(null)
+      expect(Modal.getInstance(div)).toBeNull()
       const modal = Modal.getOrCreateInstance(div, {
         backdrop: true
       })

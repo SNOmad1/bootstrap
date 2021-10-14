@@ -663,7 +663,7 @@ describe('ScrollSpy', () => {
     })
 
     it('should return null if there is no instance', () => {
-      expect(ScrollSpy.getInstance(fixtureEl)).toEqual(null)
+      expect(ScrollSpy.getInstance(fixtureEl)).toBeNull()
     })
   })
 
@@ -684,7 +684,7 @@ describe('ScrollSpy', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(ScrollSpy.getInstance(div)).toEqual(null)
+      expect(ScrollSpy.getInstance(div)).toBeNull()
       expect(ScrollSpy.getOrCreateInstance(div)).toBeInstanceOf(ScrollSpy)
     })
 
@@ -693,7 +693,7 @@ describe('ScrollSpy', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(ScrollSpy.getInstance(div)).toEqual(null)
+      expect(ScrollSpy.getInstance(div)).toBeNull()
       const scrollspy = ScrollSpy.getOrCreateInstance(div, {
         offset: 1
       })

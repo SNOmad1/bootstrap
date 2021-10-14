@@ -1072,7 +1072,7 @@ describe('Dropdown', () => {
 
       btnDropdown.addEventListener('shown.bs.dropdown', () => {
         expect(dropdown._popper).toBeNull()
-        expect(dropdownMenu.getAttribute('style')).toEqual(null, 'no inline style applied by Popper')
+        expect(dropdownMenu.getAttribute('style')).toBeNull('no inline style applied by Popper')
         done()
       })
 
@@ -1164,7 +1164,7 @@ describe('Dropdown', () => {
 
       btnDropdown.addEventListener('shown.bs.dropdown', () => {
         // Popper adds this attribute when we use it
-        expect(dropdownMenu.getAttribute('data-popper-placement')).toEqual(null)
+        expect(dropdownMenu.getAttribute('data-popper-placement')).toBeNull()
         done()
       })
 
@@ -1963,7 +1963,7 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toEqual(null)
+      expect(Dropdown.getInstance(div)).toBeNull()
     })
   })
 
@@ -1984,7 +1984,7 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toEqual(null)
+      expect(Dropdown.getInstance(div)).toBeNull()
       expect(Dropdown.getOrCreateInstance(div)).toBeInstanceOf(Dropdown)
     })
 
@@ -1993,7 +1993,7 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toEqual(null)
+      expect(Dropdown.getInstance(div)).toBeNull()
       const dropdown = Dropdown.getOrCreateInstance(div, {
         display: 'dynamic'
       })

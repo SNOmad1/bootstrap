@@ -1292,7 +1292,7 @@ describe('Carousel', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Carousel.getInstance(div)).toEqual(null)
+      expect(Carousel.getInstance(div)).toBeNull()
     })
   })
 
@@ -1313,7 +1313,7 @@ describe('Carousel', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Carousel.getInstance(div)).toEqual(null)
+      expect(Carousel.getInstance(div)).toBeNull()
       expect(Carousel.getOrCreateInstance(div)).toBeInstanceOf(Carousel)
     })
 
@@ -1322,7 +1322,7 @@ describe('Carousel', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Carousel.getInstance(div)).toEqual(null)
+      expect(Carousel.getInstance(div)).toBeNull()
       const carousel = Carousel.getOrCreateInstance(div, {
         interval: 1
       })
