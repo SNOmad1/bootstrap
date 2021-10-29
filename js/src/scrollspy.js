@@ -123,9 +123,9 @@ class ScrollSpy extends BaseComponent {
         .filter(item => item)
         .sort((a, b) => a[0] - b[0])
 
-    for (const item of targets) {
-      this._offsets.push(item[0])
-      this._targets.push(item[1])
+    for (const target of targets) {
+      this._offsets.push(target[0])
+      this._targets.push(target[1])
     }
   }
 
