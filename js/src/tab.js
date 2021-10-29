@@ -151,7 +151,8 @@ class Tab extends BaseComponent {
       const dropdownElement = element.closest(SELECTOR_DROPDOWN)
 
       if (dropdownElement) {
-        for (const dropdown of SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement)) {
+        const dropdownToggles = SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement)
+        for (const dropdown of dropdownToggles) {
           dropdown.classList.add(CLASS_NAME_ACTIVE)
         }
       }

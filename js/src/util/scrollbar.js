@@ -99,7 +99,8 @@ class ScrollBarHelper {
     if (isElement(selector)) {
       callBack(selector)
     } else {
-      for (const sel of SelectorEngine.find(selector, this._element)) {
+      const selectors = SelectorEngine.find(selector, this._element)
+      for (const sel of selectors) {
         callBack(sel)
       }
     }
