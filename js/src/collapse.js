@@ -254,12 +254,7 @@ class Collapse extends BaseComponent {
     }
 
     for (const elem of triggerArray) {
-      if (isOpen) {
-        elem.classList.remove(CLASS_NAME_COLLAPSED)
-      } else {
-        elem.classList.add(CLASS_NAME_COLLAPSED)
-      }
-
+      elem.classList.toggle(CLASS_NAME_COLLAPSED, !isOpen)
       elem.setAttribute('aria-expanded', isOpen)
     }
   }
