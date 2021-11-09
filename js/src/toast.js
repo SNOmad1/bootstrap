@@ -150,11 +150,7 @@ class Toast extends BaseComponent {
   }
 
   _maybeScheduleHide() {
-    if (!this._config.autohide) {
-      return
-    }
-
-    if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
+    if (!this._config.autohide || this._hasMouseInteraction || this._hasKeyboardInteraction) {
       return
     }
 
