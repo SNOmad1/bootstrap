@@ -700,11 +700,13 @@ class Tooltip extends BaseComponent {
     const basicClassPrefixRegex = new RegExp(`(^|\\s)${this._getBasicClassPrefix()}\\S+`, 'g')
     const tabClass = tip.getAttribute('class').match(basicClassPrefixRegex)
 
-    if (tabClass !== null && tabClass.length > 0) {
-      const cleanTabClass = tabClass.map(token => token.trim())
-      for (const tClass of cleanTabClass) {
-        tip.classList.remove(tClass)
-      }
+    if (tabClass === null || tabClass.length === 0) {
+      return
+    }
+
+    const cleanTabClass = tabClass.map(token => token.trim())
+    for (const tClass of cleanTabClass) {
+      tip.classList.remove(tClass)
     }
   }
 

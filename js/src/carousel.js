@@ -237,22 +237,24 @@ class Carousel extends BaseComponent {
     }
 
     const endCallBack = () => {
-      if (this._config.pause === 'hover') {
-        // If it's a touch-enabled device, mouseenter/leave are fired as
-        // part of the mouse compatibility events on first tap - the carousel
-        // would stop cycling until user tapped out of it;
-        // here, we listen for touchend, explicitly pause the carousel
-        // (as if it's the second time we tap on it, mouseenter compat event
-        // is NOT fired) and after a timeout (to allow for mouse compatibility
-        // events to fire) we explicitly restart cycling
-
-        this.pause()
-        if (this.touchTimeout) {
-          clearTimeout(this.touchTimeout)
-        }
-
-        this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.interval)
+      if (this._config.pause !== 'hover') {
+        return
       }
+
+      // If it's a touch-enabled device, mouseenter/leave are fired as
+      // part of the mouse compatibility events on first tap - the carousel
+      // would stop cycling until user tapped out of it;
+      // here, we listen for touchend, explicitly pause the carousel
+      // (as if it's the second time we tap on it, mouseenter compat event
+      // is NOT fired) and after a timeout (to allow for mouse compatibility
+      // events to fire) we explicitly restart cycling
+
+      this.pause()
+      if (this.touchTimeout) {
+        clearTimeout(this.touchTimeout)
+      }
+
+      this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.interval)
     }
 
     const swipeConfig = {
@@ -302,20 +304,22 @@ class Carousel extends BaseComponent {
   }
 
   _setActiveIndicatorElement(element) {
-    if (this._indicatorsElement) {
-      const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE, this._indicatorsElement)
+    if (!this._indicatorsElement) {
+      return
+    }
 
-      activeIndicator.classList.remove(CLASS_NAME_ACTIVE)
-      activeIndicator.removeAttribute('aria-current')
+    const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE, this._indicatorsElement)
 
-      const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement)
+    activeIndicator.classList.remove(CLASS_NAME_ACTIVE)
+    activeIndicator.removeAttribute('aria-current')
 
-      for (const indicator of indicators) {
-        if (Number.parseInt(indicator.getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
-          indicator.classList.add(CLASS_NAME_ACTIVE)
-          indicator.setAttribute('aria-current', 'true')
-          break
-        }
+    const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement)
+
+    for (const indicator of indicators) {
+      if (Number.parseInt(indicator.getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
+        indicator.classList.add(CLASS_NAME_ACTIVE)
+        indicator.setAttribute('aria-current', 'true')
+        break
       }
     }
   }
