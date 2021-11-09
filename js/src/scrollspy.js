@@ -118,7 +118,7 @@ class ScrollSpy extends BaseComponent {
           [Manipulator[offsetMethod](target).top + offsetBase, targetSelector] :
           []
       })
-        .filter(item => item)
+        .filter(Boolean)
         .sort((a, b) => a[0] - b[0])
 
     for (const target of targets) {
