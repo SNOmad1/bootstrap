@@ -630,13 +630,7 @@ class Tooltip extends BaseComponent {
   }
 
   _isWithActiveTrigger() {
-    for (const trigger in this._activeTrigger) {
-      if (this._activeTrigger[trigger]) {
-        return true
-      }
-    }
-
-    return false
+    return Object.keys(this._activeTrigger).some(trigger => this._activeTrigger[trigger])
   }
 
   _getConfig(config) {
